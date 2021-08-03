@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 74%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 414px) {
+  .main{
+    width: 100%;
+  }
+}

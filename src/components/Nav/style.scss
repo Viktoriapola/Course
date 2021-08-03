@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$black: #3e3e3e;
+$green: #259609;
+$gray: #ececec;
+
+.nav {
+  width: 26%;
+  height: 815px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  padding: 0 20px 30px;
+  box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+
+  .nav-lago {
+    color: $green;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    text-transform: uppercase;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    border-bottom: $gray solid 1px;
+
+    img {
+      margin-right: 12px;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    border-bottom: $gray 1px solid;
+  }
+
+  .nav-button {
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border: none;
+    background-color: white;
+    width: 95%;
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: $black;
+    text-align: start;
+    cursor: pointer;
+    &:hover {
+      color: $green;
+    }
+    &:active {
+      color: $green;
+    }
+  }
+  .nav-button.color {
+    color: $green;
+  }
+
+  .nav-drop-down {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: $black;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    &:hover {
+      background-color: $gray;
+    }
+    &:active {
+      background-color: #2596094d;
+      color: $green;
+    }
+  }
+
+  .nav-show {
+    width: 100%;
+    height: 46px;
+    padding: 7px 0;
+    border: $green 1px solid;
+    border-radius: 3px;
+    background-color: white;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: $green;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      background-color: $green;
+      transition-duration: 0.25s;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    width: 50%;
+  }
+}
+
+@media (max-width: 414px) {
+  .nav.hiden {
+    display: none;
+  }
+}
+
+
