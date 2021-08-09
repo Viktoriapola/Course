@@ -17,7 +17,7 @@ function App() {
       <footer>More programmes <img src={Lago1} alt='lago' /></footer>
     </div>
    </div>
-  );
+  )
 }
 
 export default App;

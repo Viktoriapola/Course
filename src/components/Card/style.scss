@@ -8,117 +8,147 @@ $black: #3e3e3e;
 $green: #259609;
 $gray: #ececec;
 
-.card-container {
-  width: 31%;
+@mixin card-style-white {
+  width: 97%;
   min-height: 415px;
-  background-color: white;
   padding: 20px 30px;
-  margin: 0 5px 9px 12px;
+  margin: 0 5px 9px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
+}
 
-  .big-img {
-    width: 50%;
-    align-self: flex-end;
-  }
-
+@mixin card-style-green {
+  width: 97%;
+  min-height: 415px;
+  padding: 20px 30px;
+  margin: 0 5px 9px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: $green;
+  color: white;
+  line-height: 27px;
   h3 {
-    font-family: Helvetica;
-    font-size: 13px;
-    line-height: 20px;
-    text-transform: uppercase;
+    font-size: 16px;
+  }
+  font-family: Arial, Helvetica, sans-serif;
+  
+  .info {
+    @include button;
+    background-color: white;
     color: $green;
   }
-  h2 {
-    font-family: Helvetica;
-    font-size: 20px;
-    line-height: 30px;
-    color: $black;
-  }
-
-  p {
-    font-family: Helvetica;
-    font-size: 14px;
-    line-height: 16px;
-    color: $black;
-    margin-bottom: 5px;
-    img {
-      margin-right: 12px;
-    }
-  }
-  button {
-    margin-bottom: 5px;
-    border: 0;
-    border-radius: 3px;
-    background-color: $green;
-    padding: 15px 20px;
-    font-family: Helvetica;
-    font-size: 14px;
-    line-height: 16px;
-    text-transform: uppercase;
-    color: white;
-  }
-  .active {
+  .fa.fa-times {
     display: none;
   }
-  &:hover {
-    background-color: $green;
-    transition-duration: .8s;
-    .hiden {
-      display: none;
+  .price {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+}
+
+@mixin button {
+  margin-bottom: 5px;
+  border: 0;
+  border-radius: 3px;
+  background-color: $green;
+  padding: 15px 20px;
+  font-family: Helvetica;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.card-container {
+  position: relative;
+  width: 33%;
+  .card-container-white {
+    @include card-style-white;
+  
+    .big-img {
+      width: 50%;
+      align-self: flex-end;
     }
-    .active {
-      display: block;
-      color: white;
-    }
-    .green-lago {
-      display: flex;
-    }
-    .green-lago button {
-      background-color: rgba(255, 255, 255, 0.5);
+  
+    h3 {
+      font-family: Helvetica;
+      font-size: 13px;
+      line-height: 20px;
+      text-transform: uppercase;
       color: $green;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-left: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      i {
-        font-size: 18px;
-        cursor: pointer;
-      }
-      .fa.fa-times {
-        display: none;
-      }
-      &:active {
-        .fa.fa-plus {
-          display: none;
-        }
-        .fa.fa-times {
-          display: block;
-        }
-      }
     }
     h2 {
-      font-size: 17px;
+      font-family: Helvetica;
+      font-size: 20px;
+      line-height: 30px;
+      color: $black;
     }
-    h3 {
-      color: white;
-    }
+  
     p {
-      color: white;
-    }
-    .price {
-      font-size: 30px;
+      font-family: Helvetica;
+      font-size: 14px;
+      line-height: 16px;
+      color: $black;
+      margin-bottom: 5px;
+      img {
+        margin-right: 12px;
+      }
     }
     button {
-      background-color: white;
-      color: $green;
-      cursor: pointer;
+      @include button;
+    }
+  }
+
+  .card-container-green {
+    display: none;
+  }
+
+  &:hover {
+    .card-container-white {
+      display: none;
+    }
+    .card-container-green {
+      display: block;
+      @include card-style-green;
+    }
+    .circle {
+      display: block;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.479);
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    color: $green;
+    font-size: 18px;
+    .fa.fa-times {
+      display: none;
+    }  
+  }
+
+  .circle {
+    display: none;
+  }
+
+  .circle:active {
+    background-color: rgba(255, 255, 255, 0.788);
+    .fa.fa-times {
+      display: block;
+    }
+    .fa.fa-plus {
+      display: none;
     }
   }
 }

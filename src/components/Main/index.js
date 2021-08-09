@@ -9,20 +9,20 @@ const Main = () => {
       {constants.arrCards.map((item, index) => {
         return <Card 
         key={index} 
-        lagoBig={item.lagoBig} 
-        h3={item.h3} 
-        h2={item.h2} 
-        lago_1={item.lago_1} 
-        lago_2={item.lago_2} 
-        h3_green={item.h3_green}
-        h2_green={item.h2_green}
-        p_1={item.p_1}
-        p_2={item.p_2}
-        start={item.start}
-        month={item.month}
-        price={item.price}
+        lagoBig={item.white.lagoBig} 
+        h3={item.white.h3} 
+        h2={item.white.h2} 
+        lago_1={item.white.lago_1} 
+        lago_2={item.white.lago_2} 
+        h3_green={item.green.h3_green}
+        h2_green={item.green.h2_green}
+        p_1={item.green.p_1}
+        p_2={item.green.p_2}
+        start={item.green.start}
+        month={item.green.month}
+        price={item.green.price}
         />
-      })};
+      })}
     </div>
   );    
 };
